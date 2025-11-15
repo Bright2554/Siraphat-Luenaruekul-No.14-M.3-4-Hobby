@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Drawing Hobby</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="fade-scroll">
+        <h1>Welcome to My Drawing Page</h1>
+    </header>
+
+    <section class="fade-scroll">
+        <h2>About My Hobby</h2>
+        <p>Drawing has always been my favorite hobby, and in recent years, I’ve expanded it into digital art as well. Whether it’s sketching with a pencil on paper or creating vibrant illustrations on a tablet, the process of bringing ideas to life is endlessly exciting. I love how traditional drawing helps me understand shapes, shadows, and textures, while digital tools let me experiment with colors, effects, and styles that would be impossible on paper.</p>
+        <br>
+        <p>For me, drawing—both traditional and digital—is a form of self-expression and relaxation. It lets me capture the world around me, imagine fantastical scenes, or convey emotions that words sometimes can’t express. Digital art adds another layer of freedom: I can undo mistakes instantly, try out different palettes, and even animate my creations. Over time, practicing both forms has improved my observation skills, creativity, and patience.</p>
+        <br>
+        <p>In the end, drawing and digital art are more than hobbies—they’re a way to explore my imagination, connect with my surroundings, and enjoy the process of creation.</p>
+    </section>
+
+    <section class="fade-scroll">
+        <h2>Famous Artists That Inspired Me</h2>
+        <div class="gallery">
+            <img src="O.jpg" alt="Artist O" title="Artist O" class="fade-scroll">
+            <img src="K.jpg" alt="Artist K" title="Artist K" class="fade-scroll">
+            <img src="OSK.jpg" alt="Artist OSK" title="Artist OSK" class="fade-scroll">
+        </div>
+    </section>
+
+    <section class="fade-scroll">
+        <h2>My Favorite Drawing Tools</h2>
+        <p>
+            I love using a variety of tools for my drawings:<br>
+            <strong>Traditional:</strong> pencils, pens, markers<br>
+            <strong>Digital:</strong> tablets and stylus pens
+        </p>
+    </section>
+
+    <section class="fade-scroll">
+        <h2>Drawing Techniques</h2>
+        <p>Some of my favorite techniques include:</p>
+        <ul>
+            <li><strong>Shading:</strong> Creating depth and realism.</li>
+            <li><strong>Cross-hatching:</strong> Adding texture and forms through layered lines.</li>
+            <li><strong>Blending:</strong> Smoothing colors and shades for gradients.</li>
+            <li>Experimenting with different styles and mediums to keep my art fresh!</li>
+        </ul>
+    </section>
+
+    <section class="fade-scroll">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer class="fade-scroll">
+        <p>© 2025 My Drawing Hobby. All rights reserved.</p>
+        <br>
+        <p>"Anyone can draw if they tried."</p>
+    </footer>
+
+    <!-- SCROLL ANIMATION SCRIPT -->
+    <script>
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('fade-in');
+            }
+        });
+    }
+    let options = { threshold: 0.15 };
+    let observer = new IntersectionObserver(onEntry, options);
+    // Animate all elements with .fade-scroll
+    document.querySelectorAll('.fade-scroll').forEach(el => {
+        observer.observe(el);
+    });
+    
+    document.querySelectorAll('.gallery img').forEach(el => {
+        observer.observe(el);
+    });
+    </script>
+</body>
+</html>
